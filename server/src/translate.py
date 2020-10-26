@@ -25,14 +25,13 @@ def loadModel(name, path=None):
     
     return model, tokenizer
 
-
 # if a path was given to a pretrained model, try to load from there first
 if os.environ.get("PRETRAINED_MODEL_PATH"):
     model, tokenizer = loadModel("t5-base", os.environ.get("PRETRAINED_MODEL_PATH"))
+
 else:
     # if no path was given, load from the cloud
     model, tokenizer = loadModel("t5-base")
-
 
 def translateEnToDe(phrase):
     """
@@ -42,3 +41,4 @@ def translateEnToDe(phrase):
     result = model.generate(inputs)
 
     return tokenizer.decode(result[0])
+

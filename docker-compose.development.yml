@@ -3,7 +3,7 @@ services:
     server:
         environment: 
             FLASK_APP: /code/server.py
-            FLASK_ENV: development
+            # FLASK_ENV: development
             PRETRAINED_MODEL_PATH: /saved-models/t5-base
         volumes:
             - ./saved-models:/saved-models
