@@ -3,8 +3,8 @@ from flask_restful import Resource, Api
 
 from src import translateEnToDe
 
-server = Flask(__name__)
-api = Api(server)
+app = Flask(__name__)
+api = Api(app)
 
 class Translation(Resource):
     def post(self):
@@ -17,4 +17,4 @@ class Translation(Resource):
 api.add_resource(Translation, '/translate/en-to-de')
 
 if __name__ == "__main__":
-    server.run(host="0.0.0.0")
+    app.run(host="0.0.0.0")

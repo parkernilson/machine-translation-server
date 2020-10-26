@@ -11,4 +11,4 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-ENTRYPOINT [ "python", "server.py" ]
+ENTRYPOINT [ "gunicorn", "--bind=:5000", "server:app" ]
