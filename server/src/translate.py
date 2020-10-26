@@ -33,6 +33,8 @@ else:
     # if no path was given, load from the cloud
     model, tokenizer = loadModel("t5-base")
 
+print("\nModel loaded successfully, ready to handle requests...\n")
+
 def translateEnToDe(phrase):
     """
     Translate a phrase from english to german
