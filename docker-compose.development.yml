@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+    server:
+        environment: 
+            FLASK_APP: /code/server.py
+            FLASK_ENV: development
+            PRETRAINED_MODEL_PATH: /saved-models/t5-base
+        volumes:
+            - ./saved-models:/saved-models
+            - ./server:/code # link the source code during development
+        build: ./server
+        ports:
+            - 5000:5000
