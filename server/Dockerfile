@@ -11,4 +11,4 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-ENTRYPOINT [ "gunicorn", "--bind=:5000", "server:app" ]
+ENTRYPOINT [ "gunicorn", "--bind=:5000", "--timeout=45", "server:app" ]
